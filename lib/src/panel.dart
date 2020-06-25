@@ -257,16 +257,12 @@ class _SlidingUpPanelState extends State<SlidingUpPanel> with SingleTickerProvid
         widget.body != null ? AnimatedBuilder(
           animation: _ac,
           builder: (context, child){
-            return Positioned(
+            return Positioned.fill(
               top: widget.parallaxEnabled ? _getParallax() : 0.0,
               child: child,
             );
           },
-          child: Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: widget.body,
-          ),
+          child: widget.body,
         ) : Container(),
 
 
